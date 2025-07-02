@@ -40,7 +40,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.Dispatchers
 
 
 class SampleActivity : ComponentActivity() {
@@ -112,7 +111,7 @@ fun ImageCropDemoSimple() {
                 )
             }
 
-            FixedSquareTransparentOverlay()
+            FixedSquareTransparentOverlay(padding = 20.dp)
 
             Button(onClick = { crop = true }) {
                 Text(text = "Potong")
@@ -134,7 +133,7 @@ fun ImageCropDemoSimple() {
 fun FixedSquareTransparentOverlay(
     modifier: Modifier = Modifier,
     overlayColor: Color = Color(0x80000000),
-    padding: Dp = 20.dp // 四周留白
+    padding: Dp // 四周留白
 ) {
     Canvas(modifier = modifier.fillMaxSize()) {
         val paddingPx = padding.toPx()

@@ -16,5 +16,7 @@ local.properties
 */build/
 build/
 
-#.kotlin
-#./.kotlin
+.kotlin
+./.kotlin
+.kotlin/
+./.kotlin/
