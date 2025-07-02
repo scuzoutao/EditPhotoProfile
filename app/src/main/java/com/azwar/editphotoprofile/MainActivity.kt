@@ -1,8 +1,12 @@
 package com.azwar.editphotoprofile
 
+import com.azwar.editphotoprofile.cropper.ImageCropper
+import com.azwar.editphotoprofile.cropper.draw.DrawRectangleHole
+import com.azwar.editphotoprofile.cropper.model.CropDefaults
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -23,34 +27,30 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Rect
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.ClipOp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.imageResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.azwar.editphotoprofile.cropper.ImageCropper
-import com.azwar.editphotoprofile.cropper.draw.DrawRectangleHole
-import com.azwar.editphotoprofile.cropper.model.CropDefaults
-import com.azwar.editphotoprofile.cropper.model.CropOutlineProperty
-import com.azwar.editphotoprofile.cropper.model.OutlineType
-import com.azwar.editphotoprofile.cropper.model.RectCropShape
-import com.azwar.editphotoprofile.ui.theme.EditPhotoProfileTheme
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            EditPhotoProfileTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    ImageCropDemoSimple()
-                }
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = MaterialTheme.colorScheme.background
+            ) {
+                ImageCropDemoSimple()
             }
         }
     }
@@ -59,16 +59,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ImageCropDemoSimple() {
     val handleSize: Float = LocalDensity.current.run { 20.dp.toPx() }
-    val cropProperties by remember {
-        mutableStateOf(
-            CropDefaults.properties(
-                cropOutlineProperty = CropOutlineProperty(
-                    OutlineType.Rect,
-                    RectCropShape(0, "Rect")
-                ),
-                handleSize = handleSize
-            )
-        )
+    val cropProperties = remember {
+        CropDefaults.properties()
     }
     val imageBitmapLarge = ImageBitmap.imageResource(
         LocalContext.current.resources,
@@ -96,6 +88,7 @@ fun ImageCropDemoSimple() {
                 ImageCropper(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .background(Color.Red)
                         .weight(1f),
                     imageBitmap = imageBitmap,
                     contentDescription = "Image Cropper",
@@ -113,7 +106,7 @@ fun ImageCropDemoSimple() {
                 )
             }
 
-            DrawRectangleHole()
+            RectangularTransparentOverlay()
 
             Button(onClick = { crop = true }) {
                 Text(text = "Potong")
@@ -130,6 +123,37 @@ fun ImageCropDemoSimple() {
         }
     }
 }
+
+@Composable
+fun RectangularTransparentOverlay(
+    modifier: Modifier = Modifier,
+    overlayColor: Color = Color(0x80000000),
+    rectWidthFraction: Float = 1f,  // 矩形宽度相对于屏幕宽度的比例
+    rectAspectRatio: Float = 1f       // 矩形的宽高比（1f 表示正方形）
+) {
+    Canvas(modifier = modifier.fillMaxSize()) {
+        val rectWidth = size.width * rectWidthFraction
+        val rectHeight = rectWidth / rectAspectRatio
+
+        val topLeft = Offset(
+            x = (size.width - rectWidth) / 2,
+            y = (size.height - rectHeight) / 2
+        )
+
+        val rectPath = Path().apply {
+            addRect(Rect(topLeft, Size(rectWidth, rectHeight)))
+        }
+
+        // 使用 clipPath 剪除矩形区域，再绘制遮罩
+        clipPath(rectPath, clipOp = ClipOp.Difference) {
+            drawRect(
+                color = overlayColor,
+                size = size
+            )
+        }
+    }
+}
+
 
 @Composable
 private fun ShowCroppedImageDialog(imageBitmap: ImageBitmap, onDismissRequest: () -> Unit) {
