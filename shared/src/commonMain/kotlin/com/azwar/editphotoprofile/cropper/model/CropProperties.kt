@@ -4,7 +4,9 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.ContentScale.Companion.Fit
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
+import androidx.compose.ui.unit.dp
 
 
 object CropDefaults {
@@ -14,7 +16,7 @@ object CropDefaults {
         contentScale: ContentScale = Fit,
         cropOutlineProperty: CropOutlineProperty = CropOutlineProperty(
             OutlineType.Rect,
-            CircleCropShape(0, "Rect")
+            RectCropShape(0, "Rect")
         ),
         aspectRatio: AspectRatio = AspectRatio(1 / 1f),
         overlayRatio: Float = 1f,
@@ -25,7 +27,9 @@ object CropDefaults {
         fixedAspectRatio: Boolean = false,
         requiredSize: IntSize? = null,
         minDimension: IntSize? = null,
-        panelColor: Color? = null
+        panelColor: Color? = null,
+        padding: Dp = 0.dp,
+        scaleIn: Boolean = true
     ): CropProperties {
         return CropProperties(
             contentScale = contentScale,
@@ -40,7 +44,9 @@ object CropDefaults {
             fixedAspectRatio = fixedAspectRatio,
             requiredSize = requiredSize,
             minDimension = minDimension,
-            panelColor = panelColor
+            panelColor = panelColor,
+            padding = padding,
+            scaleIn = scaleIn
         )
     }
 
@@ -67,7 +73,9 @@ data class CropProperties internal constructor(
     val fixedAspectRatio: Boolean = false,
     val requiredSize: IntSize? = null,
     val minDimension: IntSize? = null,
-    val panelColor: Color? = null
+    val panelColor: Color? = null,
+    val padding: Dp = 0.dp,
+    val scaleIn: Boolean = true,
 )
 
 @Immutable

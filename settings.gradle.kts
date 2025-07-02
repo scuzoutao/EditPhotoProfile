@@ -33,6 +33,6 @@ plugins {
 rootProject.name = "EditPhotoProfile"
 //include(":app")
 include(":composeApp")
-//include(":shared")
+include(":shared")
 
  

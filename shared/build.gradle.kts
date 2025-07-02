@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.composeHotReload)
+//    alias(libs.plugins.composeHotReload)
 //    id("maven-publish")
     id("com.vanniktech.maven.publish") version "0.33.0"
 }
@@ -47,6 +47,7 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -71,6 +72,11 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    buildFeatures {
+        compose = true
+        viewBinding = true
+        buildConfig = true // 8.0 默认不生成 buildconfig，需要手动开启
+    }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -85,6 +91,7 @@ android {
 dependencies {
     debugImplementation(compose.uiTooling)
 }
+val version1 = "1.0.2"
 
 compose.desktop {
     application {
@@ -93,33 +100,17 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.azwar.editphotoprofile"
-            packageVersion = "1.0.0"
+            packageVersion = version1
         }
     }
 }
-//version = "1.0.0"
-//publishing {
-//    repositories {
-//        val publishingUrl = "http://192.168.87.17:8081/repository/kimi-android/"
-//        maven {
-//            group = "com.moonshot.kimichat"
-//            version = "1.0.0"
-//            setUrl(publishingUrl)
-//            isAllowInsecureProtocol = true
-//            credentials {
-//                username = System.getenv("PUBLISHING_USER")
-//                password = System.getenv("PUBLISHING_PASSWORD")
-//            }
-//        }
-//    }
-//}
 
 publishing {
     val publishingUrl = "http://192.168.87.17:8081/repository/kimi-android/"
     repositories {
         maven {
             group = "com.moonshot.kimichat"
-            version = "1.0.0"
+            version = version1
             setUrl(publishingUrl)
             isAllowInsecureProtocol = true
             credentials {
@@ -131,7 +122,7 @@ publishing {
 }
 
 mavenPublishing {
-    coordinates("com.moonshot.kimichat", "edit-photo-profile", "1.0.0")
+    coordinates("com.moonshot.kimichat", "edit-photo-profile", version1)
 
     pom {
         name.set("My Library")

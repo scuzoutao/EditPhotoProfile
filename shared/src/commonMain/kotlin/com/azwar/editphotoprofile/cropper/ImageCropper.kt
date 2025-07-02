@@ -37,7 +37,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 
 @Composable
@@ -74,12 +73,14 @@ fun ImageCropper(
         val bitmapHeight = scaledImageBitmap.height
         val imageWidthPx: Int
         val imageHeightPx: Int
+        val paddingPx: Int
 
         with(LocalDensity.current) {
             imageWidthPx = imageWidth.roundToPx()
             imageHeightPx = imageHeight.roundToPx()
             containerWidth = containerWidthPx.toDp()
             containerHeight = containerHeightPx.toDp()
+            paddingPx = cropProperties.padding.roundToPx()
         }
 
         val contentScale = cropProperties.contentScale
@@ -98,7 +99,7 @@ fun ImageCropper(
 
         val cropState = rememberCropState(
             imageSize = IntSize(bitmapWidth, bitmapHeight),
-            containerSize = IntSize(containerWidthPx, containerHeightPx),
+            containerSize = IntSize(containerWidthPx - paddingPx * 2, containerHeightPx - paddingPx * 2),
             drawAreaSize = IntSize(imageWidthPx, imageHeightPx),
             cropProperties = cropProperties,
             keys = resetKeys
@@ -142,7 +143,8 @@ fun ImageCropper(
             imageHeightPx = imageHeightPx,
             overlayRect = cropState.overlayRect,
             cropOutline = cropOutline,
-            panelBackgroundColor = panelBackgroundColor
+            panelBackgroundColor = panelBackgroundColor,
+            scaleIn = cropProperties.scaleIn
         )
     }
 }
@@ -159,18 +161,31 @@ private fun ImageCropper(
     imageHeightPx: Int,
     cropOutline: CropOutline,
     overlayRect: Rect,
-    panelBackgroundColor: Color
+    panelBackgroundColor: Color,
+    scaleIn: Boolean
 ) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(panelBackgroundColor)
     ) {
-
-        AnimatedVisibility(
-            visible = visible,
-            enter = scaleIn(tween(500))
-        ) {
+        if (scaleIn) {
+            AnimatedVisibility(
+                visible = visible,
+                enter = scaleIn(tween(500))
+            ) {
+                ImageCropperImpl(
+                    modifier = modifier,
+                    imageBitmap = imageBitmap,
+                    containerWidth = containerWidth,
+                    containerHeight = containerHeight,
+                    imageWidthPx = imageWidthPx,
+                    imageHeightPx = imageHeightPx,
+                    cropOutline = cropOutline,
+                    rectOverlay = overlayRect
+                )
+            }
+        } else {
             ImageCropperImpl(
                 modifier = modifier,
                 imageBitmap = imageBitmap,

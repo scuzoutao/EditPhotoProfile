@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.composeHotReload)
+//    alias(libs.plugins.composeHotReload)
 }
 
 kotlin {
@@ -45,7 +45,9 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation("com.moonshot.kimichat:edit-photo-profile:1.0.0")
+            implementation(project(":shared"))
+//            implementation("com.moonshot.kimichat:edit-photo-profile:1.0.0")
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -82,6 +84,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        compose = true
+        viewBinding = true
+        buildConfig = true // 8.0 默认不生成 buildconfig，需要手动开启
+    }
 }
 
 dependencies {
@@ -95,7 +102,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.azwar.editphotoprofile"
-            packageVersion = "1.0.0"
+            packageVersion = "1.0.1"
         }
     }
 }

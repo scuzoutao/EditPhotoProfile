@@ -37,9 +37,10 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.Dispatchers
 
 
 class SampleActivity : ComponentActivity() {
@@ -60,10 +61,11 @@ class SampleActivity : ComponentActivity() {
 
 @Composable
 fun ImageCropDemoSimple() {
-    val handleSize: Float = LocalDensity.current.run { 20.dp.toPx() }
     val cropProperties = remember {
         CropDefaults.properties(
-            panelColor = Color.Red
+            panelColor = Color.Red,
+            padding = 20.dp,
+            scaleIn = false
         )
     }
     val imageBitmapLarge = ImageBitmap.imageResource(
@@ -110,7 +112,7 @@ fun ImageCropDemoSimple() {
                 )
             }
 
-            RectangularTransparentOverlay()
+            FixedSquareTransparentOverlay()
 
             Button(onClick = { crop = true }) {
                 Text(text = "Potong")
@@ -129,26 +131,25 @@ fun ImageCropDemoSimple() {
 }
 
 @Composable
-fun RectangularTransparentOverlay(
+fun FixedSquareTransparentOverlay(
     modifier: Modifier = Modifier,
     overlayColor: Color = Color(0x80000000),
-    rectWidthFraction: Float = 1f,  // 矩形宽度相对于屏幕宽度的比例
-    rectAspectRatio: Float = 1f       // 矩形的宽高比（1f 表示正方形）
+    padding: Dp = 20.dp // 四周留白
 ) {
     Canvas(modifier = modifier.fillMaxSize()) {
-        val rectWidth = size.width * rectWidthFraction
-        val rectHeight = rectWidth / rectAspectRatio
+        val paddingPx = padding.toPx()
+        val squareSize = minOf(size.width, size.height) - paddingPx * 2
 
         val topLeft = Offset(
-            x = (size.width - rectWidth) / 2,
-            y = (size.height - rectHeight) / 2
+            x = (size.width - squareSize) / 2,
+            y = (size.height - squareSize) / 2
         )
 
         val rectPath = Path().apply {
-            addRect(Rect(topLeft, Size(rectWidth, rectHeight)))
+            addRect(Rect(topLeft, Size(squareSize, squareSize)))
         }
 
-        // 使用 clipPath 剪除矩形区域，再绘制遮罩
+        // 挖空正方形区域
         clipPath(rectPath, clipOp = ClipOp.Difference) {
             drawRect(
                 color = overlayColor,
