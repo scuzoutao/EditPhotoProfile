@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.azwar.editphotoprofile.composeApp-mergeDebugResources-44:/values-ro/values-ro.xml",
+            "outputFile": "com.azwar.editphotoprofile.composeApp-mergeDebugResources-45:/values-ro/values-ro.xml",
             "map": [
                 {
                     "source": "/Users/zoutao/.gradle/caches/8.13/transforms/bd54beea16c4df2a3aa47e5eec2ed2d0/transformed/material3-release/res/values-ro/values-ro.xml",

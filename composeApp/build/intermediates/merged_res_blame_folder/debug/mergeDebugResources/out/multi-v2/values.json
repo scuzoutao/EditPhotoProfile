@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.azwar.editphotoprofile.composeApp-mergeDebugResources-44:/values/values.xml",
+            "outputFile": "com.azwar.editphotoprofile.composeApp-mergeDebugResources-45:/values/values.xml",
             "map": [
                 {
                     "source": "/Users/zoutao/.gradle/caches/8.13/transforms/015ff11b88b9e82a9e76d03fd10dbc27/transformed/savedstate-release/res/values/values.xml",
@@ -18,23 +18,6 @@
                         "startOffsets": "5819",
                         "endColumns": "53",
                         "endOffsets": "5868"
-                    }
-                },
-                {
-                    "source": "/Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/res/values/strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "50",
-                        "endOffsets": "62"
-                    },
-                    "to": {
-                        "startLines": "102",
-                        "startColumns": "4",
-                        "startOffsets": "6202",
-                        "endColumns": "50",
-                        "endOffsets": "6248"
                     }
                 },
                 {
@@ -192,6 +175,23 @@
                         "startOffsets": "4581,4705",
                         "endColumns": "53,66",
                         "endOffsets": "4630,4767"
+                    }
+                },
+                {
+                    "source": "/Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "50",
+                        "endOffsets": "62"
+                    },
+                    "to": {
+                        "startLines": "102",
+                        "startColumns": "4",
+                        "startOffsets": "6202",
+                        "endColumns": "50",
+                        "endOffsets": "6248"
                     }
                 },
                 {

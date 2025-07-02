@@ -1,9 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
+ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
+MERGED from [com.moonshot.kimichat:edit-photo-profile-android:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/b101751bbdc74c31ba4fe356709cd4b8/transformed/shared-release/AndroidManifest.xml:2:1-25:12
 MERGED from [androidx.activity:activity:1.10.1] /Users/zoutao/.gradle/caches/8.13/transforms/3d67229675cc6754905cd2ec285f86bc/transformed/activity-1.10.1/AndroidManifest.xml:17:1-22:12
 MERGED from [org.jetbrains.compose.components:components-resources-android:1.8.2] /Users/zoutao/.gradle/caches/8.13/transforms/01e399a1ae6e4ac92f68e009ffa8e298/transformed/library-release/AndroidManifest.xml:2:1-16:12
 MERGED from [org.jetbrains.compose.components:components-ui-tooling-preview-android:1.8.2] /Users/zoutao/.gradle/caches/8.13/transforms/2e12ed73f8f1ff982f257a512a0f345a/transformed/library-release/AndroidManifest.xml:2:1-7:12
@@ -54,16 +55,18 @@ MERGED from [androidx.tracing:tracing:1.0.0] /Users/zoutao/.gradle/caches/8.13/t
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zoutao/.gradle/caches/8.13/transforms/4462315efd19b01e97bc53b7a3cc4259/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/1f6d22ee85c70a7615c18659e14354b2/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 	package
-		INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:11-69
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:4:5-20:19
-INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:4:5-20:19
+ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:4:5-20:19
+INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:4:5-20:19
+MERGED from [com.moonshot.kimichat:edit-photo-profile-android:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/b101751bbdc74c31ba4fe356709cd4b8/transformed/shared-release/AndroidManifest.xml:7:5-23:19
+MERGED from [com.moonshot.kimichat:edit-photo-profile-android:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/b101751bbdc74c31ba4fe356709cd4b8/transformed/shared-release/AndroidManifest.xml:7:5-23:19
 MERGED from [org.jetbrains.compose.components:components-resources-android:1.8.2] /Users/zoutao/.gradle/caches/8.13/transforms/01e399a1ae6e4ac92f68e009ffa8e298/transformed/library-release/AndroidManifest.xml:7:5-14:19
 MERGED from [org.jetbrains.compose.components:components-resources-android:1.8.2] /Users/zoutao/.gradle/caches/8.13/transforms/01e399a1ae6e4ac92f68e009ffa8e298/transformed/library-release/AndroidManifest.xml:7:5-14:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.8.2] /Users/zoutao/.gradle/caches/8.13/transforms/bdbe71ac870e2278b4ba3702571c83dc/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
@@ -81,41 +84,45 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/zoutao/.gradle/cache
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zoutao/.gradle/caches/8.13/transforms/4462315efd19b01e97bc53b7a3cc4259/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zoutao/.gradle/caches/8.13/transforms/4462315efd19b01e97bc53b7a3cc4259/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] /Users/zoutao/.gradle/caches/8.13/transforms/803084e036e222523e9acdf88cc8019b/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:9:9-35
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:9:9-35
 	android:label
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:7:9-41
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:7:9-41
 	android:roundIcon
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:8:9-54
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:8:9-54
 	android:icon
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:6:9-43
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:6:9-43
 	android:allowBackup
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:5:9-35
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:5:9-35
 	android:theme
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:10:9-72
-activity#com.azwar.editphotoprofile.MainActivity
-ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:11:9-19:20
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:10:9-72
+activity#com.azwar.editphotoprofile.SampleActivity
+ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:11:9-19:20
+MERGED from [com.moonshot.kimichat:edit-photo-profile-android:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/b101751bbdc74c31ba4fe356709cd4b8/transformed/shared-release/AndroidManifest.xml:14:9-22:20
+MERGED from [com.moonshot.kimichat:edit-photo-profile-android:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/b101751bbdc74c31ba4fe356709cd4b8/transformed/shared-release/AndroidManifest.xml:14:9-22:20
 	android:exported
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:12:13-36
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:12:13-36
 	android:name
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:13:13-41
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:13:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:14:13-18:29
+ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN
-ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:15:17-69
+ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:15:25-66
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:17:17-77
+ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:17:17-77
 	android:name
-		ADDED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:17:27-74
+		ADDED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml:17:27-74
 uses-sdk
-INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
-INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+MERGED from [com.moonshot.kimichat:edit-photo-profile-android:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/b101751bbdc74c31ba4fe356709cd4b8/transformed/shared-release/AndroidManifest.xml:5:5-44
+MERGED from [com.moonshot.kimichat:edit-photo-profile-android:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/b101751bbdc74c31ba4fe356709cd4b8/transformed/shared-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity:1.10.1] /Users/zoutao/.gradle/caches/8.13/transforms/3d67229675cc6754905cd2ec285f86bc/transformed/activity-1.10.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.10.1] /Users/zoutao/.gradle/caches/8.13/transforms/3d67229675cc6754905cd2ec285f86bc/transformed/activity-1.10.1/AndroidManifest.xml:20:5-44
 MERGED from [org.jetbrains.compose.components:components-resources-android:1.8.2] /Users/zoutao/.gradle/caches/8.13/transforms/01e399a1ae6e4ac92f68e009ffa8e298/transformed/library-release/AndroidManifest.xml:5:5-44
@@ -215,9 +222,9 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zout
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/1f6d22ee85c70a7615c18659e14354b2/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zoutao/.gradle/caches/8.13/transforms/1f6d22ee85c70a7615c18659e14354b2/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
-		INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/zoutao/third-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/zoutao/moonshot-code/EditPhotoProfile/composeApp/src/androidMain/AndroidManifest.xml
 provider#org.jetbrains.compose.resources.AndroidContextProvider
 ADDED from [org.jetbrains.compose.components:components-resources-android:1.8.2] /Users/zoutao/.gradle/caches/8.13/transforms/01e399a1ae6e4ac92f68e009ffa8e298/transformed/library-release/AndroidManifest.xml:8:9-13:20
 	android:enabled
