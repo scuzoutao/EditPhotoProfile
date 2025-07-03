@@ -106,7 +106,7 @@ fun createImageBitmapWithArea(
 ): ImageBitmap {
     val paint = Paint()
     paint.isAntiAlias = true
-    val clipBitmap = ImageBitmap(width, height, config = ImageBitmapConfig.Rgb565)
+    val clipBitmap = ImageBitmap(width, height, config = source.config)
     val canvas = Canvas(clipBitmap)
     canvas.drawImageRect(
         source,

@@ -91,7 +91,7 @@ android {
 dependencies {
     debugImplementation(compose.uiTooling)
 }
-val version1 = "1.0.2"
+val version1 = "1.0.3"
 
 compose.desktop {
     application {
