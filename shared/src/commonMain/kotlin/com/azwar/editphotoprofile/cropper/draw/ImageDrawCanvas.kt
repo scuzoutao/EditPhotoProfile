@@ -20,14 +20,19 @@ internal fun ImageDrawCanvas(
         val canvasWidth = size.width.roundToInt()
         val canvasHeight = size.height.roundToInt()
 
-        drawImage(
-            image = imageBitmap,
-            srcSize = IntSize(imageBitmap.width, imageBitmap.height),
-            dstSize = IntSize(imageWidth, imageHeight),
-            dstOffset = IntOffset(
-                x = (canvasWidth - imageWidth) / 2,
-                y = (canvasHeight - imageHeight) / 2
+        try {
+            drawImage(
+                image = imageBitmap,
+                srcSize = IntSize(imageBitmap.width, imageBitmap.height),
+                dstSize = IntSize(imageWidth, imageHeight),
+                dstOffset = IntOffset(
+                    x = (canvasWidth - imageWidth) / 2,
+                    y = (canvasHeight - imageHeight) / 2
+                )
             )
-        )
+        } catch (e: Throwable) {
+            // Handle any exceptions that may occur during drawing
+            e.printStackTrace()
+        }
     }
 }

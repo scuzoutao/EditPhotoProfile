@@ -4,7 +4,6 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.BoxWithConstraintsScope
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Stable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
@@ -21,7 +20,6 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Constraints
-import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntRect
@@ -120,20 +118,24 @@ private fun ImageLayout(
                 top = (-imageWidth.toInt() + canvasHeight) / 2f,
                 left = (-imageWidth.toInt() + canvasWidth) / 2f,
             ) {
-                drawImage(
-                    imageBitmap,
-                    srcSize = IntSize(imageBitmap.width, imageBitmap.height),
-                    dstSize = IntSize(imageWidth.toInt(), imageWidth.toInt()),
-                    alpha = DefaultAlpha,
-                    filterQuality = DefaultFilterQuality
-                )
+                try {
+                    drawImage(
+                        imageBitmap,
+                        srcSize = IntSize(imageBitmap.width, imageBitmap.height),
+                        dstSize = IntSize(imageWidth.toInt(), imageWidth.toInt()),
+                        alpha = DefaultAlpha,
+                        filterQuality = DefaultFilterQuality
+                    )
+                } catch (e: Throwable) {
+                    // Handle any exceptions that may occur during drawing
+                    e.printStackTrace()
+                }
+
             }
         }
     }
     imageScopeImpl.content()
 }
-
-
 
 
 // ImageContentScaleUtils.kt

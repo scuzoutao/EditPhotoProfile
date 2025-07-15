@@ -64,7 +64,12 @@ class CropAgent {
                 Canvas(image = imageToCrop).run {
                     withSaveLayer(cropRect, imagePaint) {
                         drawPath(path, paint)
-                        drawImage(imageToCrop, Offset.Zero, imagePaint)
+                        try {
+                            drawImage(imageToCrop, Offset.Zero, imagePaint)
+                        } catch (e: Throwable) {
+                            // Handle any exceptions that may occur during drawing
+                            e.printStackTrace()
+                        }
                     }
                 }
             }
